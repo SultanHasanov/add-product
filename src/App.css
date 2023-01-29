@@ -16,9 +16,6 @@ input {
   margin-bottom: 10px;
 }
 
-.active {
-  text-decoration:underline;
-}
 
 .getpost{
 display: flex;
