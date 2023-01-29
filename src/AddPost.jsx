@@ -11,7 +11,7 @@ function AddPost() {
     
     const photo = document.querySelector("img").getAttribute("src");
 
-    const api = "http://localhost:3002/product";
+    const api = "https://63642ce67b209ece0f42316d.mockapi.io/todos";
 
     axios.post(api, {
       image: photo,
