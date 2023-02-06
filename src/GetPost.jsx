@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+// import { Base64 } from "js-base64";
 
 const GetPost = () => {
   const [post, setPost] = useState([]);
   const api = "http://localhost:3002/product";
-  // const api = "https://63642ce67b209ece0f42316d.mockapi.io/todos";
+  console.log(post)
 
   const getAxios = async () => {
     const {data} = await axios.get(api);
@@ -14,7 +15,6 @@ const GetPost = () => {
   useEffect(() => {
     getAxios();
   }, []);
-
   return (
     <div className="getpost">
       {post.map((el) => {
@@ -22,12 +22,12 @@ const GetPost = () => {
           <div className="card" key={el.id}>
             <img className="img" src={el.image} alt="" />
             <p>
-              <b>Имя: </b>
+              <b>Name: </b>
               {el.name}
             </p>
             <p>
-              <b>Цена: </b>
-              {el.price}
+              <b>Price: </b>
+              {el.price} ₽
             </p>
           </div>
         );
