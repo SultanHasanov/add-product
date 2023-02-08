@@ -61,7 +61,7 @@ function AddPost() {
           placeholder="Цена"
         />
         <input name="file" type="file" onChange={onChancheFile} />
-        <button onClick={addProduct}>Добавить</button>
+        <button className='btn_add' onClick={addProduct}>Добавить</button>
         <img width="200px" height="150px" src="" alt="" />
       </form>
     </div>

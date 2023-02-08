@@ -11,9 +11,14 @@ const GetPost = () => {
     const {data} = await axios.get(api);
     setPost(data);
   };
+  const deleteAxios = async (id) => {
+    await axios.delete(`http://localhost:3002/product/${id}`)
+    setPost(post.filter((el) => el.id !== id));
+  }
 
   useEffect(() => {
     getAxios();
+    deleteAxios()
   }, []);
   return (
     <div className="getpost">
@@ -29,6 +34,7 @@ const GetPost = () => {
               <b>Price: </b>
               {el.price} ₽
             </p>
+            <button className="btn_delete" onClick={() => deleteAxios(el.id)}>Удалить</button>
           </div>
         );
       })}
